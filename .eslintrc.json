@@ -1,0 +1,163 @@
+{
+  "ignorePatterns": [
+    "**/__del__/*",
+    "**/coverage/*",
+    "**/dist/*",
+    "**/.nyc_output/*",
+    "**/addon-knobs/*",
+    "!/.storybook",
+    "**/.cache/*",
+    "**/node_modules/*",
+    "node_modules"
+  ],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react", "prettier"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src", "."]
+      }
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "prefer-arrow-callback": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "ignoreComments": true,
+        "ignoreStrings": true
+      }
+    ],
+    "no-bitwise": ["error", { "allow": ["~"] }],
+    "no-console": ["error", { "allow": ["warn", "error", "info"] }],
+    "no-underscore-dangle": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
+    "linebreak-style": "off",
+    "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+
+    "no-plusplus": ["off", { "allowForLoopAfterthoughts": true }],
+    "global-require": "off",
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "react/no-unescaped-entities": 0,
+    "object-property-newline": [
+      "error",
+      { "allowAllPropertiesOnSameLine": true }
+    ],
+    "no-restricted-syntax": ["error", "WithStatement"],
+    "function-paren-newline": ["warn", "consistent"],
+    "object-curly-newline": ["error", { "consistent": true }],
+    "object-curly-spacing": "off",
+    "template-curly-spacing": ["error", "never"],
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": false }],
+    "arrow-body-style": ["error", "as-needed"],
+    "no-param-reassign": [
+      "error",
+      { "props": true, "ignorePropertyModificationsFor": ["draft"] }
+    ],
+    "consistent-return": ["off"],
+    "wrap-iife": ["error", "inside"],
+
+    "camelcase": [
+      "error",
+      { "properties": "always", "allow": ["ignore_whitespace"] }
+    ],
+    "no-multiple-empty-lines": ["error", { "max": 2 }],
+
+    "import/no-extraneous-dependencies": "off", // ["warn", { "devDependencies": true }],
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-import-module-exports": "off",
+    "import/no-relative-packages": "off",
+    "import/named": "off",
+
+    "import/extensions": [
+      "error",
+      {
+        "js": "never",
+        "json": "always",
+        "png": "always",
+        "svg": "always",
+        "locales": "always",
+        "styles": "always",
+        "store": "always",
+        "shared": "always",
+        "lazy": "always",
+        "css": "always",
+        "com": "always"
+      }
+    ],
+
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
+    "react/jsx-max-props-per-line": "off",
+    "react/no-multi-comp": "off",
+    "react/jsx-fragments": "off",
+    "react/forbid-prop-types": "warn",
+    "react/display-name": "off",
+    "react/prop-types": ["error", { "skipUndeclared": true }],
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": [
+      "error",
+      { "namedComponents": "arrow-function" }
+    ],
+    "react/no-unstable-nested-components": ["error", { "allowAsProps": true }],
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+
+    "testing-library/no-node-access": "off",
+    "testing-library/prefer-screen-queries": "off",
+    "testing-library/prefer-find-by": "off",
+    "testing-library/prefer-presence-queries": "off",
+    "testing-library/no-container": "off",
+    "testing-library/await-async-events": "off",
+
+    "function-call-argument-newline": "off",
+
+    "default-param-last": "off",
+    "no-restricted-exports": "off",
+
+    "storybook/hierarchy-separator": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.stories.js", "**/*.stories.*.js"],
+      "rules": {
+        "react/no-unstable-nested-components": "off"
+      }
+    },
+    {
+      "files": ["**/actions/**/*.js"],
+      "rules": {
+        "react/function-component-definition": "off"
+      }
+    }
+  ]
+}
